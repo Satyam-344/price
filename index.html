@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body.light-mode {
+      --bg-color: #000000; /* Black background for light mode */
+      --text-color: #ffffff; /* White text color */
+    }
+    body.dark-mode {
+      --bg-color: #121212; /* Very dark gray background for dark mode */
+      --text-color: #ffffff; /* White text color */
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+  </style>
+</head>
+<body class="light-mode">
+
+  <header class="p-4 bg-gray-900 text-white flex justify-between items-center shadow-md">
+    <h1 class="text-xl font-bold">Our Pricing</h1>
+    <button id="toggleMode" class="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 transition duration-300">Toggle Dark Mode</button>
+  </header>
+
+  <main class="p-8">
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Pricing Card 1 -->
+      <div class="bg-gray-800 shadow-lg rounded-lg p-6 dark:bg-gray-800 dark:text-white transition-transform transform hover:scale-105">
+        <h2 class="text-2xl font-semibold text-blue-400">Basic Plan</h2>
+        <p class="text-lg font-bold text-blue-300">$10/month</p>
+        <ul class="list-disc pl-5 mt-4 text-gray-300">
+          <li>Feature 1</li>
+          <li>Feature 2</li>
+          <li>Feature 3</li>
+        </ul>
+        <button class="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300">Sign Up</button>
+      </div>
+      <!-- Pricing Card 2 -->
+      <div class="bg-gray-800 shadow-lg rounded-lg p-6 dark:bg-gray-800 dark:text-white transition-transform transform hover:scale-105">
+        <h2 class="text-2xl font-semibold text-blue-400">Pro Plan</h2>
+        <p class="text-lg font-bold text-blue-300">$30/month</p>
+        <ul class="list-disc pl-5 mt-4 text-gray-300">
+          <li>Feature 1</li>
+          <li>Feature 2</li>
+          <li>Feature 3</li>
+          <li>Feature 4</li>
+        </ul>
+        <button class="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300">Sign Up</button>
+      </div>
+      <!-- Pricing Card 3 -->
+      <div class="bg-gray-800 shadow-lg rounded-lg p-6 dark:bg-gray-800 dark:text-white transition-transform transform hover:scale-105">
+        <h2 class="text-2xl font-semibold text-blue-400">Enterprise Plan</h2>
+        <p class="text-lg font-bold text-blue-300">$50/month</p>
+        <ul class="list-disc pl-5 mt-4 text-gray-300">
+          <li>Feature 1</li>
+          <li>Feature 2</li>
+          <li>Feature 3</li>
+          <li>Feature 4</li>
+          <li>Feature 5</li>
+        </ul>
+        <button class="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300">Sign Up</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggleButton = document.getElementById('toggleMode');
+    toggleButton.addEventListener('click', () => {
+      if (document.body.classList.contains('light-mode')) {
+        document.body.classList.remove('light-mode');
+        document.body.classList.add('dark-mode');
+        toggleButton.textContent = 'Toggle Light Mode';
+      } else {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+        toggleButton.textContent = 'Toggle Dark Mode';
+      }
+    });
+  </script>
+
+</body>
+</html>
